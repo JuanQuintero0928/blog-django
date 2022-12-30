@@ -99,7 +99,26 @@
                     <hr class="my-4" />
                 </div>
             </div>
-            
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 float-left">
+                        {% if posts.has_previous %}
+                            <div class="clearfix">
+                                <a href="?page={{ posts.previous_page_number }}{% if request.GET.search %} &q={{ request.GET.search}}{% endif %}" class="btn btn-primary float-left">Anterior</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 float-right">
+                        {% if posts.has_next %}
+                            <div class="clearfix">
+                                <a href="?page={{ posts.next_page_number }}{% if request.GET.search %} &q={{ request.GET.search}}{% endif %}" class="btn btn-primary float-right">Siguiente</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Footer-->
         <footer class="border-top">
